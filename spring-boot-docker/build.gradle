@@ -40,7 +40,13 @@ task buildDocker(type: Docker, dependsOn: build) {
     }
 }
 
+bootRun {
+    addResources = true
+}
+
 dependencies {
+    compile("org.springframework.boot:spring-boot-devtools")
     compile("org.springframework.boot:spring-boot-starter-web")
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }
+
